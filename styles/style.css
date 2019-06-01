@@ -1,0 +1,176 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin:0;
+
+    --primary-color: #2d5c88;
+    --light-primary-color: #96aec4;
+
+    --secondary-color: #4e4e4e;
+    --light-secondary-color: #d3d3d3;
+}
+
+header {
+    background-color: var(--primary-color);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 0.5em;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#search-container {
+    background-color: white;
+    padding: 0.25em;
+}
+
+#search-container .search-icon {
+    color: black;
+}
+
+#search-box {
+    border: none;
+    outline: none;
+    font-size: 1em;
+}
+
+main {
+    max-width: 800px;
+    margin: 4em auto;
+    padding: 0 0.5em;
+}
+
+main > nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+}
+
+.links-container a {
+    background-color: var(--light-primary-color);
+    color: white;
+    padding: 0.1em 0.25em;
+    text-decoration: none;
+}
+
+.links-container a:hover {
+    text-decoration: underline;
+}
+
+.links-container a.selected {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+#slider-thumbnails-container {
+    display: flex;
+}
+
+#slider-thumbnails-container .thumbnail:not(:last-of-type) {
+    margin-right: 5px;
+}
+
+#slider-thumbnails-container .thumbnail {
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+
+#slider-thumbnails-container .thumbnail.selected {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+#slider-thumbnails-container .thumbnail:hover {
+    border-bottom: 2px solid var(--light-primary-color);
+}
+
+/*nastavak*/
+@media only screen and (max-width: 450px) {
+ nav .logo-container{
+     display: none;
+ }
+}
+
+#slider {
+    margin-top: 1em;
+}
+
+#cards-container .card{
+    background-color: lightgray;
+    padding: 0.25em;
+    position: relative;
+}
+
+#cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 0.5em;
+    grid-row-gap: 0.5em;
+}
+
+.card .delete-button{
+    cursor: pointer;
+    transition: transform 0.25s ease-in-out;
+    position: absolute;
+    top: -0.25em;
+    right: -0.2em;
+}
+
+.card .delete-button:hover{
+    transform: scale(1.2);
+}
+
+.card .add-button{
+    cursor: pointer;
+    transition: transform 0.25s ease-in-out;
+    position: absolute;
+    bottom: -0.25em;
+    right: -0.2em;
+}
+
+.card .add-button:hover{
+    transform: scale(1.2);
+}
+
+.card .delete-button{
+    cursor: pointer;
+    transition: transform 0.25s ease-in-out;
+    position: absolute;
+    top: -0.25em;
+    right: -0,2em;
+}
+
+.card .delete-button:hover{
+    transform: scale(1.2);
+}
+
+@media only screen and (max-width: 650px){
+    #cards-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    #cards-container{
+        grid-template-columns: 1fr;
+    }
+}
+
+footer{
+    background-color: var(--secondary-color);
+    text-align: center;
+    color: white;
+    padding: 0.5em;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
